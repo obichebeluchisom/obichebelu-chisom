@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Obichebelu Chisom - Web Developer & Graphics Designer</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#4f46e5',secondary:'#8b5cf6'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+}
+.hero-gradient {
+background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0) 100%);
+}
+input:focus, textarea:focus {
+outline: none;
+border-color: #4f46e5;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+.project-card:hover .project-overlay {
+opacity: 1;
+}
+.custom-checkbox {
+position: relative;
+display: inline-block;
+width: 20px;
+height: 20px;
+margin-right: 8px;
+}
+.custom-checkbox input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+width: 20px;
+height: 20px;
+background-color: #fff;
+border: 2px solid #d1d5db;
+border-radius: 4px;
+transition: all 0.2s ease;
+}
+.custom-checkbox input:checked ~ .checkmark {
+background-color: #4f46e5;
+border-color: #4f46e5;
+}
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+left: 6px;
+top: 2px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+display: block;
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+<div class="container mx-auto px-4 md:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center">
+<a href="#" class="text-2xl font-['Pacifico'] text-primary">Chisom</a>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a href="#about" class="text-gray-700 hover:text-primary transition-colors">About</a>
+<a href="#skills" class="text-gray-700 hover:text-primary transition-colors">Skills</a>
+<a href="#projects" class="text-gray-700 hover:text-primary transition-colors">Projects</a>
+<a href="#gallery" class="text-gray-700 hover:text-primary transition-colors">Gallery</a>
+<a href="#blog" class="text-gray-700 hover:text-primary transition-colors">Blog</a>
+<a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+<a href="sign.html" class="text-gray-700 hover:text-primary transition-colors">Sign Up</a>
+</div>
+<div class="md:hidden flex items-center">
+<button id="mobile-menu-button" class="w-10 h-10 flex items-center justify-center text-gray-700">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</div>
+</div>
+<div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+<div class="px-4 py-3 space-y-3">
+<a href="#about" class="block text-gray-700 hover:text-primary transition-colors">About</a>
+<a href="#skills" class="block text-gray-700 hover:text-primary transition-colors">Skills</a>
+<a href="#projects" class="block text-gray-700 hover:text-primary transition-colors">Projects</a>
+<a href="#gallery" class="block text-gray-700 hover:text-primary transition-colors">Gallery</a>
+<a href="#blog" class="block text-gray-700 hover:text-primary transition-colors">Blog</a>
+<a href="#contact" class="block text-gray-700 hover:text-primary transition-colors">Contact</a>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative pt-16 overflow-hidden" style="background-image: url('https://readdy.ai/api/search-image?query=professional%20modern%20workspace%20with%20computer%2C%20minimal%20desk%20setup%2C%20soft%20natural%20lighting%2C%20clean%20design%20aesthetic%2C%20blurred%20background%2C%20neutral%20colors%2C%20creative%20environment%2C%20high-end%20photography%2C%20shallow%20depth%20of%20field%2C%20perfect%20for%20portfolio%20website%20hero&width=1920&height=1080&seq=1&orientation=landscape'); background-size: cover; background-position: center;">
+<div class="w-full min-h-[90vh] flex items-center">
+<div class="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+<div class="hero-gradient w-full md:w-3/5 p-8 md:p-12 rounded-lg">
+<div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+<div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-lg">
+<img src="img/my img.jpeg" alt="Alex Morgan" class="w-full h-full object-cover">
+</div>
+<div class="text-center md:text-left">
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-2">Obichebelu Chisom</h1>
+<p class="text-xl md:text-2xl text-gray-700 mb-6"><strong>Web Developer & Graphics Designer</strong></p>
+<div class="flex flex-wrap justify-center md:justify-start gap-4 mb-8">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors">
+<i class="ri-linkedin-fill ri-lg"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors">
+<i class="ri-github-fill ri-lg"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors">
+<i class="ri-twitter-fill ri-lg"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors">
+<i class="ri-dribbble-fill ri-lg"></i>
+</a>
+</div>
+<div class="flex flex-wrap gap-3 justify-center md:justify-start">
+<a href="#contact" class="px-6 py-3 bg-primary text-white rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">
+Contact Me
+</a>
+<a href="#projects" class="px-6 py-3 bg-white text-primary border border-primary rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">
+View Projects
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section id="about" class="py-20 bg-white">
+<div class="container mx-auto px-4 md:px-6 lg:px-8">
+<div class="max-w-3xl mx-auto">
+<h2 class="text-3xl font-bold text-center text-gray-900 mb-8">About Me</h2>
+<div class="prose prose-lg max-w-none text-gray-700">
+<p>Hello! I'm Obichebelu Chisom, a passionate web developer and UI/UX designer with over 7 years of experience creating beautiful, functional digital experiences. Based in San Francisco, I specialize in building modern, responsive websites and applications that deliver exceptional user experiences.</p>
+<p>My approach combines clean code with thoughtful design principles, ensuring that every project not only looks great but also performs flawlessly across all devices. I believe that the best digital products are those that solve real problems while providing intuitive, enjoyable interactions.</p>
+<p>When I'm not coding, you can find me exploring hiking trails, experimenting with photography, or attending tech meetups to stay connected with the vibrant developer community.</p>
+</div>
+<div class="mt-8 flex justify-center">
+<a href="#" class="px-6 py-3 bg-primary text-white rounded-button font-medium hover:bg-primary/90 transition-colors flex items-center gap-2 whitespace-nowrap">
+<i class="ri-download-line"></i>
+Download Resume
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section id="skills" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4 md:px-6 lg:px-8">
+<h2 class="text-3xl font-bold text-center text-gray-900 mb-12">My Skills</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary mb-4">
+<i class="ri-code-s-slash-line ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Web Development</h3>
+<p class="text-gray-700 mb-4">Creating modern, responsive websites and web applications with cutting-edge technologies and best practices.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">HTML5</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">CSS3</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">JavaScript</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">React</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Node.js</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">MongoDB</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary mb-4">
+<i class="ri-palette-line ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Graphics Design</h3>
+<p class="text-gray-700 mb-4">Creating stunning visual designs, branding materials, and digital artwork that captures attention and communicates effectively.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Adobe Photoshop</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Illustrator</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">InDesign</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Brand Design</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Typography</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Logo Design</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary mb-4">
+<i class="ri-cpu-line ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Software & Hardware Engineering</h3>
+<p class="text-gray-700 mb-4">Developing integrated solutions combining software applications with hardware systems for innovative tech solutions.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">C++</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Python</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Arduino</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Raspberry Pi</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">PCB Design</span>
+<span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">IoT</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section id="projects" class="py-20 bg-white">
+<div class="container mx-auto px-4 md:px-6 lg:px-8">
+<h2 class="text-3xl font-bold text-center text-gray-900 mb-8">My Projects</h2>
+<div class="flex justify-center mb-10">
+<div class="inline-flex bg-gray-100 p-1 rounded-full">
+<button class="filter-btn active px-4 py-2 rounded-full bg-primary text-white whitespace-nowrap" data-filter="all">All Projects</button>
+<button class="filter-btn px-4 py-2 rounded-full text-gray-700 hover:bg-gray-200 whitespace-nowrap" data-filter="web">Web Development</button>
+<button class="filter-btn px-4 py-2 rounded-full text-gray-700 hover:bg-gray-200 whitespace-nowrap" data-filter="mobile">Mobile Apps</button>
+<button class="filter-btn px-4 py-2 rounded-full text-gray-700 hover:bg-gray-200 whitespace-nowrap" data-filter="design">UI/UX Design</button>
+</div>
+</div>
+<div class="flex justify-center mb-10">
+<div class="inline-flex bg-gray-100 p-1 rounded-full">
+<button class="filter-btn active px-4 py-2 rounded-full bg-primary text-white whitespace-nowrap" data-filter="all">All Projects</button>
+<button class="filter-btn px-4 py-2 rounded-full text-gray-700 hover:bg-gray-200 whitespace-nowrap" data-filter="web">Web Development</button>
+<button class="filter-btn px-4 py-2 rounded-full text-gray-700 hover:bg-gray-200 whitespace-nowrap" data-filter="design">Graphics Design</button>
+<button class="filter-btn px-4 py-2 rounded-full text-gray-700 hover:bg-gray-200 whitespace-nowrap" data-filter="engineering">Software & Hardware</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="project-card group" data-category="web">
+<div class="relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow h-64">
+<img src="https://readdy.ai/api/search-image?query=modern%20e-commerce%20website%20interface%20with%20clean%20design%2C%20product%20grid%20layout%2C%20shopping%20cart%20functionality%2C%20responsive%20design%2C%20high-quality%20product%20images%2C%20professional%20web%20design%2C%20minimal%20aesthetic&width=600&height=400&seq=3&orientation=landscape" alt="E-commerce Platform" class="w-full h-full object-cover object-top">
+<div class="project-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 transition-opacity duration-300">
+<div class="text-center p-4">
+<div class="flex justify-center gap-3 mb-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-primary hover:bg-gray-100 transition-colors">
+<i class="ri-eye-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-primary hover:bg-gray-100 transition-colors">
+<i class="ri-github-line"></i>
+</a>
+</div>
+<h4 class="text-white font-semibold text-lg">View Project</h4>
+</div>
+</div>
+</div>
+<div class="mt-4">
+<h3 class="text-xl font-semibold text-gray-900">E-commerce Website Development</h3>
+<p class="text-gray-700 mt-2">A full-featured online store with product management, shopping cart, and secure payment integration.</p>
+<div class="flex flex-wrap gap-2 mt-3">
+<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">React</span>
+<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">Node.js</span>
+<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">MongoDB</span>
+<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">Stripe</span>
+</div>
+</div>
+</div>
+<div class="project-card group" data-category="design">
+<div class="relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow h-64">
+<img src="https://readdy.ai/api/search-image?query=professional%20brand%20identity%20design%20with%20logo%20variations%2C%20color%20palette%2C%20typography%2C%20marketing%20materials%2C%20modern%20graphic%20design%20project%20presentation&width=600&height=400&seq=4&orientation=landscape" alt="Brand Identity Design" class="w-full h-full object-cover object-top">
+<div class="project-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 transition-opacity duration-300">
+<div class="text-center p-4">
+<div class="flex justify-center gap-3 mb-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-primary hover:bg-gray-100 transition-colors">
+<i class="ri-eye-line"></i>
+</a>
+</div>
+<h4 class="text-white font-semibold text-lg">View Project</h4>
+</div>
+</div>
+</div>
+<div class="mt-4">
+<h3 class="text-xl font-semibold text-gray-900">Corporate Brand Identity</h3>
+<p class="text-gray-700 mt-2">Complete brand identity design including logo, typography, color palette, and marketing materials.</p>
+<div class="flex flex-wrap gap-2 mt-3">
+<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">Adobe Illustrator</span>
+<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">Photoshop</span>
+<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">Brand Design</span>
+</div>
+</div>
+</div>
+<div class="project-card group" data-category="engineering">
+<div class="relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow h-64">
+<img src="https://readdy.ai/api/search-image?query=modern%20IoT%20device%20prototype%20with%20circuit%20boards%2C%20sensors%2C%20clean%20hardware%20design%2C%20professional%20engineering%20workspace%2C%20technical%20development%20environment&width=600&height=400&seq=5&orientation=landscape" alt="IoT System" class="w-full h-full object-cover object-top">
+<div class="project-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 transition-opacity duration-300">
+<div class="text-center p-4">
+<div class="flex justify-center gap-3 mb-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-primary hover:bg-gray-100 transition-colors">
+<i class="ri-eye-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-primary hover:bg-gray-100 transition-colors">
+<i class="ri-github-line"></i>
+</a>
+</div>
+<h4 class="text-white font-semibold text-lg">View Project</h4>
+</div>
+</div>
+</div>
+<div class="mt-4">
+<h3 class="text-xl font-semibold text-gray-900">Smart Home IoT System</h3>
+<p class="text-gray-700 mt-2">Integrated IoT solution for home automation with custom hardware design and software implementation.</p>
+<div class="flex flex-wrap gap-2 mt-3">
+<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">Arduino</span>
+<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">Raspberry Pi</span>
+<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">Python</span>
+<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">IoT</span>
+</div>
+</div>
+</div>
+<div class="project-card group" data-category="web">
+<div class="relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow h-64">
+<img src="https://readdy.ai/api/search-image?query=modern%20learning%20management%20system%20interface%20with%20course%20dashboard%2C%20video%20player%2C%20assessment%20tools%2C%20clean%20educational%20platform%20design&width=600&height=400&seq=6&orientation=landscape" alt="Learning Platform" class="w-full h-full object-cover object-top">
+<div class="project-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 transition-opacity duration-300">
+<div class="text-center p-4">
+<div class="flex justify-center gap-3 mb-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-primary hover:bg-gray-100 transition-colors">
+<i class="ri-eye-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-primary hover:bg-gray-100 transition-colors">
+<i class="ri-github-line"></i>
+</a>
+</div>
+<h4 class="text-white font-semibold text-lg">View Project</h4>
+</div>
+</div>
+</div>
+<div class="mt-4">
+<h3 class="text-xl font-semibold text-gray-900">Online Learning Platform</h3>
+<p class="text-gray-700 mt-2">Feature-rich learning management system with video courses, assessments, and progress tracking.</p>
+<div class="flex flex-wrap gap-2 mt-3">
+<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">Vue.js</span>
+<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">Django</span>
+<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">PostgreSQL</span>
+</div>
+</div>
+</div>
+<div class="project-card group" data-category="design">
+<div class="relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow h-64">
+<img src="https://readdy.ai/api/search-image?query=digital%20marketing%20campaign%20visuals%20with%20social%20media%20posts%2C%20banner%20ads%2C%20infographics%2C%20modern%20graphic%20design%2C%20marketing%20materials&width=600&height=400&seq=7&orientation=landscape" alt="Marketing Campaign" class="w-full h-full object-cover object-top">
+<div class="project-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 transition-opacity duration-300">
+<div class="text-center p-4">
+<div class="flex justify-center gap-3 mb-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-primary hover:bg-gray-100 transition-colors">
+<i class="ri-eye-line"></i>
+</a>
+</div>
+<h4 class="text-white font-semibold text-lg">View Project</h4>
+</div>
+</div>
+</div>
+<div class="mt-4">
+<h3 class="text-xl font-semibold text-gray-900">Digital Marketing Campaign</h3>
+<p class="text-gray-700 mt-2">Comprehensive digital marketing assets including social media graphics, banners, and infographics.</p>
+<div class="flex flex-wrap gap-2 mt-3">
+<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">Adobe Creative Suite</span>
+<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">Digital Marketing</span>
+<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">Social Media</span>
+</div>
+</div>
+</div>
+<div class="project-card group" data-category="engineering">
+<div class="relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow h-64">
+<img src="https://readdy.ai/api/search-image?query=industrial%20automation%20system%20with%20robotics%20control%20interface%2C%20machine%20learning%20algorithms%20visualization%2C%20technical%20engineering%20project&width=600&height=400&seq=8&orientation=landscape" alt="Automation System" class="w-full h-full object-cover object-top">
+<div class="project-overlay absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 transition-opacity duration-300">
+<div class="text-center p-4">
+<div class="flex justify-center gap-3 mb-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-primary hover:bg-gray-100 transition-colors">
+<i class="ri-eye-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-primary hover:bg-gray-100 transition-colors">
+<i class="ri-github-line"></i>
+</a>
+</div>
+<h4 class="text-white font-semibold text-lg">View Project</h4>
+</div>
+</div>
+</div>
+<div class="mt-4">
+<h3 class="text-xl font-semibold text-gray-900">Industrial Automation System</h3>
+<p class="text-gray-700 mt-2">Advanced automation solution with machine learning integration for industrial process optimization.</p>
+<div class="flex flex-wrap gap-2 mt-3">
+<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">PLC Programming</span>
+<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">Machine Learning</span>
+<span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">Industrial IoT</span>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<h4 class="text-white font-semibold text-lg">View Project</h4>
+</div>
+
+
+
+
+</div>
+</div>
+</div>
+<div class="project-card group" data-category="mobile">
+
+
+</div>
+</div>
+<div class="mt-12 text-center">
+<a href="#" class="px-6 py-3 bg-white text-primary border border-primary rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">
+View All Projects
+</a>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section id="gallery" class="py-20 bg-white">
+<div class="container mx-auto px-4 md:px-6 lg:px-8">
+<h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Gallery</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="gallery-item group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+<img src="img/WhatsApp Image 2025-06-04 at 12.03.37.jpeg" style="object-fit: cover;" alt="Urban Architecture" class="w-full h-[400px] object-cover">
+<div class="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="text-center p-4">
+</div>
+</div>
+</div>
+<div class="gallery-item group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+<img src="img/WhatsApp Image 2025-06-04 at 12.03.40.jpeg" alt="Nature Landscapes" class="w-full h-[400px] object-cover">
+<div class="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="text-center p-4">
+</div>
+</div>
+</div>
+<div class="gallery-item group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+<img src="img/WhatsApp Image 2025-06-04 at 12.03.41.jpeg" alt="Abstract Art" class="w-full h-[400px] object-cover">
+<div class="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="text-center p-4">
+
+</div>
+</div>
+</div>
+<div class="gallery-item group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+<img src="img/WhatsApp Image 2025-06-04 at 12.03.43.jpeg" alt="Street Life" class="w-full h-[400px] object-cover">
+<div class="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="text-center p-4">
+</div>
+</div>
+</div>
+<div class="gallery-item group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+<img src="https://readdy.ai/api/search-image?query=portrait%20photography%20with%20natural%20lighting%2C%20emotional%20expression%2C%20professional%20headshot%20style%2C%20artistic%20portrait%20photography&width=600&height=800&seq=16&orientation=portrait" alt="Portraits" class="w-full h-[400px] object-cover">
+<div class="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="text-center p-4">
+</div>
+</div>
+</div>
+<div class="gallery-item group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+<img src="https://readdy.ai/api/search-image?query=macro%20photography%20of%20nature%20details%2C%20extreme%20close-up%2C%20vibrant%20colors%2C%20artistic%20composition%2C%20professional%20macro%20photography&width=600&height=800&seq=17&orientation=portrait" alt="Macro Nature" class="w-full h-[400px] object-cover">
+<div class="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="text-center p-4">
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center">
+<button id="load-more" class="px-6 py-3 bg-white text-primary border border-primary rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">
+Load More
+</button>
+</div>
+</div>
+</section>
+<!-- Blog Section -->
+<section id="blog" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4 md:px-6 lg:px-8">
+<h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Latest Articles</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<article class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%20web%20development%20concept%20with%20code%20on%20screen%2C%20programming%20environment%2C%20clean%20desk%20setup%2C%20web%20developer%20workspace%2C%20professional%20coding%20environment&width=600&height=300&seq=9&orientation=landscape" alt="Web Development Trends" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex items-center text-sm text-gray-500 mb-3">
+<span class="flex items-center">
+<i class="ri-calendar-line mr-1"></i>
+May 25, 2025
+</span>
+<span class="mx-2">•</span>
+<span class="flex items-center">
+<i class="ri-time-line mr-1"></i>
+5 min read
+</span>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">The Future of Web Development: Trends to Watch in 2025</h3>
+<p class="text-gray-700 mb-4">Explore the latest trends shaping the future of web development, from WebAssembly to AI-driven interfaces and the evolution of JavaScript frameworks.</p>
+<a href="#" class="text-primary font-medium hover:text-primary/80 transition-colors flex items-center">
+Read More
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+</article>
+<article class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=UI%20UX%20design%20process%20with%20wireframes%2C%20prototypes%2C%20design%20tools%2C%20user%20interface%20sketches%2C%20modern%20design%20workspace%2C%20professional%20design%20environment&width=600&height=300&seq=10&orientation=landscape" alt="UI/UX Design Process" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex items-center text-sm text-gray-500 mb-3">
+<span class="flex items-center">
+<i class="ri-calendar-line mr-1"></i>
+May 18, 2025
+</span>
+<span class="mx-2">•</span>
+<span class="flex items-center">
+<i class="ri-time-line mr-1"></i>
+7 min read
+</span>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Mastering the UI/UX Design Process: From Concept to Implementation</h3>
+<p class="text-gray-700 mb-4">A comprehensive guide to the UI/UX design process, covering research, wireframing, prototyping, user testing, and collaboration with developers.</p>
+<a href="#" class="text-primary font-medium hover:text-primary/80 transition-colors flex items-center">
+Read More
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+</article>
+<article class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=mobile%20app%20development%20concept%20with%20smartphone%2C%20code%2C%20design%20elements%2C%20app%20interface%20mockups%2C%20modern%20development%20environment%2C%20professional%20mobile%20development%20workspace&width=600&height=300&seq=11&orientation=landscape" alt="Mobile App Development" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex items-center text-sm text-gray-500 mb-3">
+<span class="flex items-center">
+<i class="ri-calendar-line mr-1"></i>
+May 10, 2025
+</span>
+<span class="mx-2">•</span>
+<span class="flex items-center">
+<i class="ri-time-line mr-1"></i>
+6 min read
+</span>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Building Cross-Platform Mobile Apps: React Native vs. Flutter</h3>
+<p class="text-gray-700 mb-4">A detailed comparison of React Native and Flutter for cross-platform mobile app development, with insights on performance, developer experience, and use cases.</p>
+<a href="#" class="text-primary font-medium hover:text-primary/80 transition-colors flex items-center">
+Read More
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+</article>
+</div>
+<div class="mt-12 text-center">
+<a href="#" class="px-6 py-3 bg-white text-primary border border-primary rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">
+View All Articles
+</a>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-white">
+<div class="container mx-auto px-4 md:px-6 lg:px-8">
+<div class="max-w-5xl mx-auto">
+<h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Get In Touch</h2>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div>
+<h3 class="text-2xl font-semibold text-gray-900 mb-6">Contact Information</h3>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-4">
+<i class="ri-map-pin-line"></i>
+</div>
+<div>
+<h4 class="text-lg font-medium text-gray-900 mb-1">Location</h4>
+<p class="text-gray-700">Byazhin, kubwa. Abuja Nigeria</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-4">
+<i class="ri-mail-line"></i>
+</div>
+<div>
+<h4 class="text-lg font-medium text-gray-900 mb-1">Email</h4>
+<p class="text-gray-700">obichebeluchisom39@gmail.com</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-4">
+<i class="ri-phone-line"></i>
+</div>
+<div>
+<h4 class="text-lg font-medium text-gray-900 mb-1">Phone</h4>
+<p class="text-gray-700">+234 805 583 4194</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-4">
+<i class="ri-time-line"></i>
+</div>
+<div>
+<h4 class="text-lg font-medium text-gray-900 mb-1">Working Hours</h4>
+<p class="text-gray-700">Monday - Friday: 9:00 AM - 6:00 PM</p>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<h4 class="text-lg font-medium text-gray-900 mb-4">Follow Me</h4>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors">
+<i class="ri-github-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors">
+<i class="ri-twitter-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors">
+<i class="ri-dribbble-fill"></i>
+</a>
+</div>
+</div>
+</div>
+<div>
+<form id="contact-form" class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+<input type="text" id="name" name="name" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded text-gray-900 focus:ring-2 focus:ring-primary/20" placeholder="Your name" required>
+</div>
+<div>
+<label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+<input type="email" id="email" name="email" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded text-gray-900 focus:ring-2 focus:ring-primary/20" placeholder="Your email" required>
+</div>
+</div>
+<div>
+<label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+<input type="text" id="subject" name="subject" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded text-gray-900 focus:ring-2 focus:ring-primary/20" placeholder="Subject" required>
+</div>
+<div>
+<label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+<textarea id="message" name="message" rows="5" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded text-gray-900 focus:ring-2 focus:ring-primary/20" placeholder="Your message" required></textarea>
+</div>
+<div class="flex items-start">
+<label class="custom-checkbox">
+<input type="checkbox" required>
+<span class="checkmark"></span>
+</label>
+<span class="text-sm text-gray-700">I agree to the <a href="#" class="text-primary hover:underline">Privacy Policy</a> and consent to being contacted regarding my inquiry.</span>
+</div>
+<div>
+<button type="submit" class="w-full px-6 py-3 bg-primary text-white rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">
+Send Message
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="container mx-auto px-4 md:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+<div>
+<a href="#" class="text-2xl font-['Pacifico'] text-white mb-4 inline-block">Chisom</a>
+<p class="text-gray-400 mb-6">Creating beautiful, functional digital experiences that solve real problems and delight users.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+<i class="ri-github-fill"></i>
+</a>
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+<i class="ri-twitter-fill"></i>
+</a>
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+<i class="ri-dribbble-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+<li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+<li><a href="#skills" class="text-gray-400 hover:text-white transition-colors">Skills</a></li>
+<li><a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a></li>
+<li><a href="#blog" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+<li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Services</h4>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Web Development</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">UI/UX Design</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Mobile Development</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">E-commerce Solutions</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Web Performance</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Consulting</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+<p class="text-gray-400 mb-4">Subscribe to receive updates on new projects, articles, and tech insights.</p>
+<form class="space-y-3">
+<div class="relative">
+<input type="email" placeholder="Your email address" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded text-white placeholder-gray-500 focus:ring-2 focus:ring-primary/20 focus:border-primary">
+</div>
+<button type="submit" class="w-full px-4 py-3 bg-primary text-white rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">
+Subscribe
+</button>
+</form>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Obichebelu Chisom. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+<a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+<a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Back to Top Button -->
+<button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
+<i class="ri-arrow-up-line ri-lg"></i>
+</button>
+<script id="navigation-script">
+document.addEventListener('DOMContentLoaded', function() {
+// Mobile menu toggle
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+if (mobileMenu.classList.contains('hidden')) {
+mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+} else {
+mobileMenuButton.innerHTML = '<i class="ri-close-line ri-lg"></i>';
+}
+});
+// Close mobile menu when clicking on a link
+const mobileLinks = mobileMenu.querySelectorAll('a');
+mobileLinks.forEach(link => {
+link.addEventListener('click', function() {
+mobileMenu.classList.add('hidden');
+mobileMenuButton.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+});
+});
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+if (targetId === '#') return;
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+<script id="project-filter-script">
+document.addEventListener('DOMContentLoaded', function() {
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+filterButtons.forEach(button => {
+button.addEventListener('click', function() {
+// Remove active class from all buttons
+filterButtons.forEach(btn => {
+btn.classList.remove('active', 'bg-primary', 'text-white');
+btn.classList.add('text-gray-700', 'hover:bg-gray-200');
+});
+// Add active class to clicked button
+this.classList.add('active', 'bg-primary', 'text-white');
+this.classList.remove('text-gray-700', 'hover:bg-gray-200');
+const filter = this.getAttribute('data-filter');
+// Show/hide projects based on filter with animation
+projectCards.forEach(card => {
+if (filter === 'all' || card.getAttribute('data-category') === filter) {
+card.style.opacity = '0';
+card.style.display = 'block';
+setTimeout(() => {
+card.style.opacity = '1';
+}, 50);
+} else {
+card.style.opacity = '0';
+setTimeout(() => {
+card.style.display = 'none';
+}, 300);
+}
+});
+});
+});
+// Initialize with all projects visible
+projectCards.forEach(card => {
+card.style.opacity = '1';
+card.style.transition = 'opacity 0.3s ease-in-out';
+});
+});
+</script>
+<script id="back-to-top-script">
+document.addEventListener('DOMContentLoaded', function() {
+const backToTopButton = document.getElementById('back-to-top');
+window.addEventListener('scroll', function() {
+if (window.pageYOffset > 300) {
+backToTopButton.classList.remove('opacity-0', 'invisible');
+backToTopButton.classList.add('opacity-100', 'visible');
+} else {
+backToTopButton.classList.remove('opacity-100', 'visible');
+backToTopButton.classList.add('opacity-0', 'invisible');
+}
+});
+backToTopButton.addEventListener('click', function() {
+window.scrollTo({
+top: 0,
+behavior: 'smooth'
+});
+});
+});
+</script>
+<script id="gallery-script">
+document.addEventListener('DOMContentLoaded', function() {
+const loadMoreBtn = document.getElementById('load-more');
+let currentPage = 1;
+loadMoreBtn.addEventListener('click', function() {
+currentPage++;
+// Here you would typically fetch more images from a server
+// For demo purposes, we'll just show a message
+const gallery = document.querySelector('.grid');
+if (currentPage >= 3) {
+loadMoreBtn.style.display = 'none';
+return;
+}
+// Clone existing gallery items and append them
+const existingItems = document.querySelectorAll('.gallery-item');
+existingItems.forEach(item => {
+const clone = item.cloneNode(true);
+gallery.appendChild(clone);
+});
+});
+});
+</script>
+<script id="contact-form-script">
+document.addEventListener('DOMContentLoaded', function() {
+const contactForm = document.getElementById('contact-form');
+contactForm.addEventListener('submit', function(e) {
+e.preventDefault();
+// Get form values
+const name = document.getElementById('name').value;
+const email = document.getElementById('email').value;
+const subject = document.getElementById('subject').value;
+const message = document.getElementById('message').value;
+// Simple validation
+if (!name || !email || !subject || !message) {
+alert('Please fill in all fields');
+return;
+}
+// Here you would typically send the form data to a server
+// For demo purposes, we'll just show a success message
+alert('Thank you for your message! I will get back to you soon.');
+contactForm.reset();
+});
+});
+</script>
+</body>
+</html>
